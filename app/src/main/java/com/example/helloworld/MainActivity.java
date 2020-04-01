@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser user = authService.getCurrentUser();
         if (user != null) {
             Log.d("userId", user.getUid());
+            startActivity(new Intent(MainActivity.this, UserInfoActivity.class));
+            finish();
         } else {
             Log.d("userId", "not auth");
         }
